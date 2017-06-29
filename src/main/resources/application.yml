@@ -1,0 +1,23 @@
+
+spring:
+#  profiles:
+#    active: dev
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/dbgirl
+#    username: root
+#    password: 123456
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+  data:
+    mongodb:
+      database: test
+      host: localhost
+      port: 27017
+      authentication-database: test
+server:
+  port: 8081
+
+

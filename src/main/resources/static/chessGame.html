@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>中国象棋在线112</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/chessGame.css"/>
+</head>
+<body>
+<div id="main">
+    <div id="beginBtn" class="beginBtn">
+        <button type="button" class="btn btn-primary btn-lg" @click="initGame()" v-text="beginGame?'重新开始':'开始游戏'"/>
+    </div>
+    <div v-for="(chessArray,i) in chessBoard.board">
+        <img v-if="chess != null" v-for="(chess,j) in chessArray" :src="'image/'+chess.color+chess.iden+'.GIF'"
+             class="chessImg" :class="{'check' : i == XA && j==YA,'hover' : chess.color == chessBoard.authority}"
+             @click="moveChess(chess,i,j)"/>
+        <img v-else src="image/transparent.jpg" class="emptyImg" @click="moveChess(chess,i,j)"/>
+
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/axios.js"></script>
+<script src="js/jquery_2.1.4.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/chessControl.js"></script>
+</body>
+</html>
